@@ -1,6 +1,6 @@
 POST http://localhost:3003/user/recover
  Content-Type: application/json
 
- {
+{
     "email":"tesfdsgfffkdfde@ftste.com"
 }

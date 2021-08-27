@@ -17,9 +17,9 @@ export class UserApplication {
     if (!isValidEmail) {
       throw new Error("invalid email");
     }
-    const { id } = await this.userDatabase.findUserByEmail(email);
+    const id = await this.userDatabase.findUserByEmail(email);
 
-    const token = this.authentitacor.generateToken(id);
+    const token = this.authentitacor.generateToken(id!);
 
     return token;
   };

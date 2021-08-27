@@ -1,20 +1,14 @@
-import { userId } from "../../types";
+import { authenticationData } from "../../types";
 import { BaseDatabase } from "../BaseDatabase";
 
-type id = {
-  id: string;
-};
 export class UserDatabase extends BaseDatabase {
-  public findUserByEmail = async (
-    email: string
-  ):Promise<any> => {
+  public findUserByEmail = async (email: string) => {
     try {
       const result = await BaseDatabase.connection("lbn_user")
         .select("id")
         .where({ email });
-      const userId: userId = { id: result[0] };
-
-      return userId.id as string;
+      const id: authenticationData = { id: result[0] };
+      return id;
     } catch (err) {
       if (err instanceof Error) {
         throw new Error(err.message);

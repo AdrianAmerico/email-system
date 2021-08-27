@@ -13,6 +13,6 @@ export type addressInfo = {
   state: string;
 };
 
-export type userId = {
+export type authenticationData = {
   id: string;
 };
