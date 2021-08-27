@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-export class allUsersController {
+export class UserController {
   public createRecoverPasswordToken = async (req: Request, res: Response): Promise<void> => {
     try {
       const { email } = req.params;
