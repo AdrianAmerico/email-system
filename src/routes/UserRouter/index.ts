@@ -5,5 +5,5 @@ export const userRouter = express.Router();
 
 const userController = new UserController();
 
-userRouter.post("/recover-password", userController.createRecoverPasswordToken);
-userRouter.post("/change-password", userController.changeUserPassword);
+userRouter.post("/recover", userController.createRecoverPasswordToken);
+userRouter.post("/change", userController.changeUserPassword);
