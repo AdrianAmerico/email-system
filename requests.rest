@@ -4,3 +4,13 @@ POST http://localhost:3003/user/recover
 {
     "email":"tesfdsgfffkdfde@ftste.com"
 }
+
+###
+
+POST http://localhost:3003/user/change?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJpZCI6IjE5MDZiYzk5LTNjM2UtNGUwNy1iYWY3LTgwODNmNzAxMmIyNiJ9LCJpYXQiOjE2MzAxOTA3MjEsImV4cCI6MTYzMDI3NzEyMX0.zSDAMTVyoWQ6ReEUqFj8eRfrxvhZM6pIIVXJTleSJsc
+ Content-Type: application/json
+
+{
+    "password":"tesfdsgfffkdfde@ftste.com"   
+}
+

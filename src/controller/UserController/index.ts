@@ -29,6 +29,20 @@ export class UserController {
     req: Request,
     res: Response
   ): Promise<void> => {
-    res.status(200).send("aaaaaaa");
+    try {
+      const { token } = req.query;
+      const { password } = req.body;
+
+      const userId = (await this.userApplication.changeUserPassword(
+        password,
+        token
+      )) as string;
+
+      res.status(200).send(userId);
+    } catch (err) {
+      if (err instanceof Error) {
+        res.status(400).send({ message: err.message });
+      }
+    }
   };
 }

@@ -16,3 +16,9 @@ export type addressInfo = {
 export type authenticationData = {
   id: string;
 };
+
+export type payload = {
+  id: { id: string };
+  iat: number;
+  exp: number;
+};

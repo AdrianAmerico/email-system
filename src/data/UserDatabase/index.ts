@@ -15,4 +15,19 @@ export class UserDatabase extends BaseDatabase {
       }
     }
   };
+
+  public changeUserPassword = async (
+    id: string,
+    password: string
+  ): Promise<void> => {
+    try {
+      await BaseDatabase.connection("lbn_user")
+        .update({ password })
+        .where({ id });
+    } catch (err) {
+      if (err instanceof Error) {
+        throw new Error(err.message);
+      }
+    }
+  };
 }
