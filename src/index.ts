@@ -1,3 +1,4 @@
 import app from "./app";
+import { userRouter } from "./routes/UserRouter";
 
-app.post("/users/recover");
+app.use("/user", userRouter);
