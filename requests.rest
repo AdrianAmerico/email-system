@@ -7,7 +7,7 @@ POST http://localhost:3003/user/recover
 
 ###
 
-POST http://localhost:3003/user/change?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJpZCI6IjE5MDZiYzk5LTNjM2UtNGUwNy1iYWY3LTgwODNmNzAxMmIyNiJ9LCJpYXQiOjE2MzAxOTA3MjEsImV4cCI6MTYzMDI3NzEyMX0.zSDAMTVyoWQ6ReEUqFj8eRfrxvhZM6pIIVXJTleSJsc
+POST http://localhost:3003/user/change?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJpZCI6IjE5MDZiYzk5LTNjM2UtNGUwNy1iYWY3LTgwODNmNzAxMmIyNiJ9LCJpYXQiOjE2MzAzNDg0MzksImV4cCI6MTYzMDQzNDgzOX0.-7xuNiclLRw3GIWaHInwUg-vV2tq8Pp6Aq_Qr5NNqfk
  Content-Type: application/json
 
 {

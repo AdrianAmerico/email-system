@@ -1,17 +1,18 @@
 import nodemailer from "nodemailer";
-import dotenv from "dotenv"
+import dotenv from "dotenv";
 
-dotenv.config()
+dotenv.config();
+
+const { NODEMAILER_PASS, NODEMAILER_USER } = process.env;
+console.log(NODEMAILER_PASS, NODEMAILER_USER);
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
+  host: "smtp.mailtrap.io",
+  port: 2525,
   auth: {
-     user: process.env.NODEMAILER_USER,
-     pass: process.env.NODEMAILER_PASS
-  },
-  tls: { ciphers: "SSLv3" }
-})
+    user: `${NODEMAILER_USER}`,
+    pass: `${NODEMAILER_PASS}`
+  }
+});
 
-export default transporter
+export default transporter;

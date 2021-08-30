@@ -1,7 +1,11 @@
 import * as EmailValidator from "email-validator";
 import { UserDatabase } from "../../data/UserDatabase";
 import { Authenticator } from "../../services/authenticator";
+import transporter from "../../services/mailTransporter";
+import dotenv from "dotenv";
 
+dotenv.config();
+console.log(process.env.NODEMAILER_USER);
 export class UserApplication {
   constructor(
     private userDatabase = new UserDatabase(),
@@ -21,6 +25,20 @@ export class UserApplication {
 
     const token = this.authenticator.generateToken(id!);
 
+    const mailInfo = await transporter.sendMail({
+      from: `<${process.env.NODEMAILER_USER}>`,
+      to: '1fnadrian1@gmail.com',
+      subject: "Finalize seu cadastro",
+      html: `
+         <p>Clique no botão abaixo para recuperar sua senha</p>
+         <a href="http://localhost:3003/user/change?token=${token}" target="_blank">Verificar Email</a>
+      `,
+      text: `
+         Clique no link abaixo para concluir seu cadastro na nossa plataforma:
+         www.fakelink.com
+      `,
+    });
+    console.log(mailInfo);
     return token;
   };
 
